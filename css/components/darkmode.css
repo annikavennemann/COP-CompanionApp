@@ -1,0 +1,60 @@
+body.darkmode {
+    background-color: #1E1E1E;
+    color: #858585;
+} 
+
+.darkmode-btn {
+    position: fixed;
+    left: 0;
+    top: 80%;
+    border: 0;
+    border-radius: 6px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 40px;
+    height: 40px;
+    padding: 0.3em .6em;
+    box-shadow: 0 2px 11px 0 rgba(25, 50, 81, 0.2);
+    z-index:10;
+}
+.darkmode-btn:focus{
+    outline: 0;
+}
+.darkmode-btn__icon {
+    color: #193251;
+}
+
+body.darkmode .darkmode-btn,
+body.darkmode .side__footer {
+    background-color: #484848;
+}
+
+body.darkmode svg {
+    color: #858585;
+    filter: brightness(10);
+}
+body.darkmode .journal-entry__icon--light {
+    color: #E0E4E8;
+}
+
+body.darkmode header {
+    background-image: url('../../images/background_shape_1-dark.svg');
+}
+
+body.darkmode h1, 
+body.darkmode h2, 
+body.darkmode h3,
+body.darkmode h4,
+body.darkmode h5
+body.darkmode h6 {
+    color: #ddd;
+}
+
+body.darkmode p,
+body.darkmode .team__member-name {
+    color: #858585;
+}
+
+body.darkmode .nav__button {
+    filter: brightness(10)
+}

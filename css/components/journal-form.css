@@ -1,0 +1,85 @@
+.page-margin__journal-form {
+    margin: 89px 30px 0;
+}
+
+.journal-form__headline {
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.journal-form__item {
+    display: block;
+}
+
+
+.journal-form__input{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 4px;
+    border: 1px solid #E0E4E8;
+}
+
+.journal-form__textarea {
+    box-sizing: border-box;
+    width: 100%;
+    height: 6.5rem;
+    padding: 1rem;
+    border-radius: 4px;
+    border: 1px solid #E0E4E8;
+}
+
+.journal-form__buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 88px;
+
+}
+
+.journal-form__button {
+    display: block;
+    width: 200px;
+    height: 48px;
+    background-color: #FF5A36;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.journal-form__button--light {
+    background-color: #fff;
+    color: #193251;
+}
+
+
+.journal-form__rating-icons {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.journal-form__rating-icons--flex-end {
+    justify-content: flex-end;
+}
+
+.journal-form__checkbox-element{
+    display: none;
+}
+
+.journal-form__checkbox-label {
+    margin-right: .6em;
+    color: #fff;
+    stroke: #E0E4E8;
+    transition: color .4s ease-in-out;
+}
+
+.journal-form__checkbox-label--checked,
+.journal-form__checkbox-label--checked  ~ .journal-form__checkbox-label
+ {
+    color: #193251;
+}
+
+

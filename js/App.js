@@ -1,4 +1,4 @@
-
+import Journal from './components/Journal'
 export default () => {
     const members = [
         {
@@ -43,3 +43,5 @@ export default () => {
         }
     ]
 }
+
+Journal()
