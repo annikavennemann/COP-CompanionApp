@@ -1,1 +1,9 @@
-@import './components/buddy.css'
+@import './components/global.css';
+@import './components/header.css';
+@import './components/journal.css';
+@import './components/journal-form.css';
+@import './components/footer.css';
+@import './components/buddy.css';
+@import './components/energy.css';
+@import './components/team.css';
+@import './components/darkmode.css';

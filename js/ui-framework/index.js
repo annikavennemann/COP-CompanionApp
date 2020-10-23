@@ -11,9 +11,19 @@ export function createElement(
         newElement.textContent = text;
     }
 
-    if (cssClass) {
-        newElement.classList.add(cssClass);
+
+    if ( Array.isArray(cssClass) ) {
+        cssClass.forEach((currywurst) => {
+            newElement.classList.add(currywurst)
+        }) 
+    } else if ( cssClass ) {
+        newElement.classList.add(cssClass)
     }
+
 
     return newElement;
 }
+
+/*cssClass.forEach((class) => {
+    newElement.classList.add(class)
+})*/

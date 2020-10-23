@@ -1,0 +1,30 @@
+.page-margin__teams {
+    margin: 112px 30px 87px;
+}
+
+.team__number {
+    margin-left: 2em;
+    text-transform: uppercase;
+    font-size: 1em;
+}
+
+.team__list {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    list-style: none;
+    border: 1px solid #E0E4E8;
+    border-radius: 6px 6px 6px 6px;
+}
+
+.team__member-name {
+    padding: 1em;
+    text-align: center;
+    border-bottom: 1px solid #E0E4E8;
+    font-weight: 600;
+    color: #7589A2;
+}
+
+.team__member-name:last-child {
+    border-bottom: none;
+}

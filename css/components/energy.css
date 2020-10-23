@@ -1,0 +1,66 @@
+.page-margin__energy {
+    margin:70px 30px;
+}
+
+.energy__grafic {
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.energylevel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.energylevel__button--100 {
+    margin-bottom: 10px;
+    align-items: stretch;
+    width: 100%;
+    height: 48px;
+    border-color: transparent;
+    background-color: #FF5A36;
+    color: white;
+    font-weight: 700;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+.energylevel__button--75 {
+    margin-bottom: 10px;
+    align-items: stretch;
+    width: 100%;
+    height: 48px;
+    border-color: transparent;
+    background-color: #FF9C86;
+    color: white;
+    font-weight: 700;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+.energylevel__button--50 {
+    margin-bottom: 10px;
+    align-items: stretch;
+    width: 100%;
+    height: 48px;
+    border-color: transparent;
+    background-color: #FFBDAF;
+    color: #FF5A36;
+    font-weight: 700;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+.energylevel__button--25 {
+    align-items: stretch;
+    width: 100%;
+    height: 48px;
+    border-color: transparent;
+    background-color: #FFDED7;
+    color: #FF5A36;
+    font-weight: 700;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
