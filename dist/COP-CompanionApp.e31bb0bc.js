@@ -185,23 +185,39 @@ exports.default = Nav;
 var _uiFramework = require("../ui-framework");
 
 function Nav(onClick) {
-  var nav = (0, _uiFramework.createElement)('nav', document.body, '', '');
-  var navList = (0, _uiFramework.createElement)('ul', nav, '', '');
-  var hTitle = ['Dashboard', 'Code Buddys', 'Teams', 'Energy', 'Journal'];
-  var hSubtitle = ['', 'on Monday - 26.10.2020', 'for Exercise 1', '', ''];
-  hSubtitle.forEach(function (subHeadline) {
-    hTitle.forEach(function (headline) {
-      console.log(headline, subHeadline); // const linkElement = createElement('li', navList, '', headline);
-      // linkElement.addEventListener('click', function (event) {
-      //     onClick(headline);
-      // });
+  var footer = (0, _uiFramework.createElement)('footer', document.body, 'side__footer');
+  var nav = (0, _uiFramework.createElement)('nav', footer, 'nav__footer');
+  var navList = (0, _uiFramework.createElement)('ul', nav, 'nav_list', '');
+  var navInfo = [{
+    headline: 'Dashboard',
+    subHeadline: null,
+    class: 'nav__button--dashboard'
+  }, {
+    headline: 'Code Buddys',
+    subHeadline: 'on Monday - 26.10.2020',
+    class: 'nav__button--buddy'
+  }, {
+    headline: 'Teams',
+    subHeadline: 'for Exercise 1',
+    class: 'nav__button--teams'
+  }, {
+    headline: 'Energy',
+    subHeadline: null,
+    class: 'nav__button--energy'
+  }, {
+    headline: 'Journal',
+    subHeadline: null,
+    class: 'nav__button--journal'
+  }];
+  navInfo.forEach(function (title) {
+    var linkElement = (0, _uiFramework.createElement)('li', navList, title.class); // const iconNav = createElement('img', linkElement, 'nav__button--dashboard')
+    // iconNav = title.source
+
+    linkElement.addEventListener('click', function (event) {
+      onClick(title.headline, title.subHeadline);
     });
   });
-} // m.forEach(k => {
-//     n.forEach(i => {
-//         console.log(i, k)
-//     });
-// };
+}
 },{"../ui-framework":"js/ui-framework/index.js"}],"js/App.js":[function(require,module,exports) {
 "use strict";
 
@@ -291,7 +307,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52013" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59638" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

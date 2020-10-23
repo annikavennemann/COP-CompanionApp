@@ -1,25 +1,44 @@
 import { createElement } from '../ui-framework';
 
 export default function Nav(onClick) {
-    const nav = createElement('nav', document.body, '', '');
-    const navList = createElement('ul', nav, '', '');
+    const footer = createElement('footer', document.body, 'side__footer')
+    const nav = createElement('nav', footer, 'nav__footer');
+    const navList = createElement('ul', nav, 'nav_list', '');
 
-    const hTitle = ['Dashboard', 'Code Buddys', 'Teams', 'Energy', 'Journal'];
-    const hSubtitle = ['', 'on Monday - 26.10.2020', 'for Exercise 1', '', ''];
+    const navInfo = [
+        {
+            headline: 'Dashboard',
+            subHeadline: null,
+            class: 'nav__button--dashboard'
+        },
+        {
+            headline: 'Code Buddys',
+            subHeadline: 'on Monday - 26.10.2020',
+            class: 'nav__button--buddy'
+        },
+        {
+            headline: 'Teams',
+            subHeadline: 'for Exercise 1',
+            class: 'nav__button--teams'
+        },
+        {
+            headline: 'Energy',
+            subHeadline: null,
+            class: 'nav__button--energy'
+        },
+        {
+            headline: 'Journal',
+            subHeadline: null,
+            class: 'nav__button--journal'
+        }
+    ]
 
-    hSubtitle.forEach(subHeadline => {
-        hTitle.forEach((headline) => {
-            console.log(headline, subHeadline)
-            // const linkElement = createElement('li', navList, '', headline);
-            // linkElement.addEventListener('click', function (event) {
-            //     onClick(headline);
-            // });
+    navInfo.forEach((title) => {
+        const linkElement = createElement('li', navList, title.class);
+        // const iconNav = createElement('img', linkElement, 'nav__button--dashboard')
+        // iconNav = title.source
+        linkElement.addEventListener('click', function (event) {
+            onClick(title.headline, title.subHeadline);
         });  
     });
 }
-
-// m.forEach(k => {
-//     n.forEach(i => {
-//         console.log(i, k)
-//     });
-// };
