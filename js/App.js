@@ -1,9 +1,11 @@
 import Header from './components/Header';
 import Nav from './components/Nav'
-import Journal from './components/Journal'
+import { createElement} from './ui-framework'
+/*import Journal from './components/Journal'*/
 
 export default () => {
     const headerComponent = Header();
+    const main = createElement('main')
 
     const members = [
         {
@@ -49,6 +51,5 @@ export default () => {
 
     ];
 
-  Journal()
   Nav((headerTitle, headerSubtitle) => headerComponent.update(headerTitle, headerSubtitle))
 }
