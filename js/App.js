@@ -1,3 +1,4 @@
+import Buddys from './components/Buddys'
 
 export default () => {
     const members = [
@@ -42,4 +43,6 @@ export default () => {
             Nachname: 'Jobs'
         }
     ]
+
+    Buddys()
 }
