@@ -1,5 +1,9 @@
+import Header from './components/Header';
+import Nav from './components/Nav'
 
 export default () => {
+    const headerComponent = Header();
+
     const members = [
         {
             Vorname: 'Tine',
@@ -41,5 +45,7 @@ export default () => {
             Vorname: 'Steve',
             Nachname: 'Jobs'
         }
-    ]
+    ];
+
+    Nav((headerTitle, headerSubtitle) => headerComponent.update(headerTitle, headerSubtitle))
 }

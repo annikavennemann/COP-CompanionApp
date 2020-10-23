@@ -1,0 +1,27 @@
+.header__all {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    background-image: url(../../images/background_shape_1.svg);
+    background-repeat: no-repeat;
+    width: 100%;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    padding: 1rem 0; 
+}
+
+.header__title {
+    margin: 0.5rem 0.5rem 0 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: #193251;
+    text-transform: uppercase;    
+}
+
+.header__subtitle {
+    margin: 0 0.5rem 0.5rem;
+    font-size: 12px;
+    color: #7589A2;
+}
