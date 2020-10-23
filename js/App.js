@@ -1,7 +1,10 @@
+import Header from './components/Header';
+import Nav from './components/Nav'
 import Journal from './components/Journal'
 
-
 export default () => {
+    const headerComponent = Header();
+
     const members = [
         {
             Vorname: 'Tine',
@@ -43,8 +46,9 @@ export default () => {
             Vorname: 'Steve',
             Nachname: 'Jobs'
         }
-    ]
+
+    ];
+
+  Journal()
+  Nav((headerTitle, headerSubtitle) => headerComponent.update(headerTitle, headerSubtitle))
 }
-
-
-Journal()
