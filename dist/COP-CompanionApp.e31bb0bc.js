@@ -142,7 +142,82 @@ function createElement(tag) {
 
   return newElement;
 }
-},{}],"js/components/Journal/JournalCard.js":[function(require,module,exports) {
+},{}],"js/components/Header.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _uiFramework = require("../ui-framework");
+
+var _default = function _default() {
+  var headerAll = (0, _uiFramework.createElement)('header', document.body, 'header__all');
+  var headerTitle = (0, _uiFramework.createElement)('h1', headerAll, 'header__title', 'Dashboard');
+  var headerSubtitle = (0, _uiFramework.createElement)('p', headerAll, 'header__subtitle', '');
+  return {
+    componentName: 'Header',
+    update: function update(newHeadline, newSubheadline) {
+      headerTitle.textContent = newHeadline;
+      headerSubtitle.textContent = newSubheadline;
+      return 'the title just changed';
+    }
+  };
+};
+
+exports.default = _default;
+},{"../ui-framework":"js/ui-framework/index.js"}],"js/components/Nav.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Nav;
+
+var _uiFramework = require("../ui-framework");
+
+function Nav(onClick) {
+  var footer = (0, _uiFramework.createElement)('footer', document.body, 'side__footer');
+  var nav = (0, _uiFramework.createElement)('nav', footer, 'nav__footer');
+  var navList = (0, _uiFramework.createElement)('ul', nav, 'nav_list', '');
+  var navInfo = [{
+    headline: 'Dashboard',
+    subHeadline: null,
+    class: 'nav__button--dashboard',
+    href: '#dashboard'
+  }, {
+    headline: 'Code Buddys',
+    subHeadline: 'on Monday - 26.10.2020',
+    class: 'nav__button--buddy',
+    href: '#buddy'
+  }, {
+    headline: 'Teams',
+    subHeadline: 'for Exercise 1',
+    class: 'nav__button--teams',
+    href: '#teams'
+  }, {
+    headline: 'Energy',
+    subHeadline: null,
+    class: 'nav__button--energy',
+    href: '#energy'
+  }, {
+    headline: 'Journal',
+    subHeadline: null,
+    class: 'nav__button--journal',
+    href: '#journal'
+  }];
+  navInfo.forEach(function (title) {
+    var linkElement = (0, _uiFramework.createElement)('li', navList, title.class);
+    linkElement.setAttribute('data-href', title.href); // const iconNav = createElement('img', linkElement, 'nav__button--dashboard')
+    // iconNav = title.source
+
+    linkElement.addEventListener('click', function (event) {
+      onClick(title.headline, title.subHeadline);
+    });
+  });
+}
+},{"../ui-framework":"js/ui-framework/index.js"}],"js/components/Journal/JournalCard.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -255,11 +330,16 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _Header = _interopRequireDefault(require("./components/Header"));
+
+var _Nav = _interopRequireDefault(require("./components/Nav"));
+
 var _Journal = _interopRequireDefault(require("./components/Journal"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = function _default() {
+  var headerComponent = (0, _Header.default)();
   var members = [{
     Vorname: 'Tine',
     Nachname: 'Krüger'
@@ -291,11 +371,14 @@ var _default = function _default() {
     Vorname: 'Steve',
     Nachname: 'Jobs'
   }];
+  (0, _Journal.default)();
+  (0, _Nav.default)(function (headerTitle, headerSubtitle) {
+    return headerComponent.update(headerTitle, headerSubtitle);
+  });
 };
 
 exports.default = _default;
-(0, _Journal.default)();
-},{"./components/Journal":"js/components/Journal.js"}],"index.js":[function(require,module,exports) {
+},{"./components/Header":"js/components/Header.js","./components/Nav":"js/components/Nav.js","./components/Journal":"js/components/Journal.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _App = _interopRequireDefault(require("./js/App"));
@@ -331,7 +414,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54194" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63482" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
