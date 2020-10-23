@@ -4,3 +4,13 @@ body {
     padding: 0;
     font-family: 'Open Sans', sans-serif;
 }
+
+.global__headline2 {
+    font-weight: 600;
+    font-size: 14px;
+    color: #193251;
+}
+
+.section--hidden {
+    display: none;
+}

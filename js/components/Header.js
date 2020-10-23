@@ -15,10 +15,3 @@ export default () => {
         },
     };
 }
-
-/*
-<header>
-    <h1 class="headline1__twolines">Teams</h1>
-    <p class="header__sub-headline">for Exercise 1</p>
-</header> 
-*/

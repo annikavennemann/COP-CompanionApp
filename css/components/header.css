@@ -1,3 +1,4 @@
+
 .header__all {
     position: fixed;
     top: 0;
@@ -10,6 +11,7 @@
     background-size: cover;
     padding: 1rem 0; 
 }
+
 
 .header__title {
     margin: 0.5rem 0.5rem 0 0.5rem;

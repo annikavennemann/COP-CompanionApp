@@ -1,5 +1,6 @@
 import Header from './components/Header';
 import Nav from './components/Nav'
+import Journal from './components/Journal'
 
 export default () => {
     const headerComponent = Header();
@@ -45,7 +46,9 @@ export default () => {
             Vorname: 'Steve',
             Nachname: 'Jobs'
         }
+
     ];
 
-    Nav((headerTitle, headerSubtitle) => headerComponent.update(headerTitle, headerSubtitle))
+  Journal()
+  Nav((headerTitle, headerSubtitle) => headerComponent.update(headerTitle, headerSubtitle))
 }
