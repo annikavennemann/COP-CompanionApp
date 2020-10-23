@@ -322,16 +322,54 @@ function Nav(onClick) {
   }];
   navInfo.forEach(function (title) {
     var linkElement = (0, _uiFramework.createElement)('li', navList, title.class);
-    linkElement.setAttribute('data-href', title.href); // const iconNav = createElement('img', linkElement, 'nav__button--dashboard')
-    // iconNav = title.source
-
     linkElement.addEventListener('click', function (event) {
       onClick(title.headline, title.subHeadline);
       title.show();
     });
   });
 }
-},{"../ui-framework":"js/ui-framework/index.js","./Journal":"js/components/Journal.js"}],"js/App.js":[function(require,module,exports) {
+},{"../ui-framework":"js/ui-framework/index.js","./Journal":"js/components/Journal.js"}],"js/components/BuddyPair.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _uiFramework = require("../ui-framework");
+
+var _default = function _default(pair, parent) {
+  var buddyListElement = (0, _uiFramework.createElement)('li', parent, 'buddy__pair');
+  var buddyOne = (0, _uiFramework.createElement)('p', buddyListElement, 'buddy', pair[0].Vorname + ' ' + pair[0].Nachname);
+  var buddyTwo = (0, _uiFramework.createElement)('p', buddyListElement, 'buddy', pair[1].Vorname + ' ' + pair[1].Nachname);
+};
+
+exports.default = _default;
+},{"../ui-framework":"js/ui-framework/index.js"}],"js/components/BuddyList.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _uiFramework = require("../ui-framework");
+
+var _BuddyPair = _interopRequireDefault(require("./BuddyPair"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _default = function _default(members) {
+  var buddySection = (0, _uiFramework.createElement)('section', document.body, 'buddy-section');
+  var buddyList = (0, _uiFramework.createElement)('ul', buddySection, 'buddy__list');
+  var buddyPairs = [members.slice(0, 2), members.slice(2, 4), members.slice(4, 6), members.slice(6, 8), members.slice(8, 10)];
+  buddyPairs.forEach(function (pair) {
+    (0, _BuddyPair.default)(pair, buddyList);
+  });
+};
+
+exports.default = _default;
+},{"../ui-framework":"js/ui-framework/index.js","./BuddyPair":"js/components/BuddyPair.js"}],"js/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -345,9 +383,10 @@ var _Nav = _interopRequireDefault(require("./components/Nav"));
 
 var _uiFramework = require("./ui-framework");
 
+var _BuddyList = _interopRequireDefault(require("./components/BuddyList"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/*import Journal from './components/Journal'*/
 var _default = function _default() {
   var headerComponent = (0, _Header.default)();
   var main = (0, _uiFramework.createElement)('main');
@@ -382,13 +421,14 @@ var _default = function _default() {
     Vorname: 'Steve',
     Nachname: 'Jobs'
   }];
+  (0, _BuddyList.default)(members);
   (0, _Nav.default)(function (headerTitle, headerSubtitle) {
     return headerComponent.update(headerTitle, headerSubtitle);
   });
 };
 
 exports.default = _default;
-},{"./components/Header":"js/components/Header.js","./components/Nav":"js/components/Nav.js","./ui-framework":"js/ui-framework/index.js"}],"index.js":[function(require,module,exports) {
+},{"./components/Header":"js/components/Header.js","./components/Nav":"js/components/Nav.js","./ui-framework":"js/ui-framework/index.js","./components/BuddyList":"js/components/BuddyList.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _App = _interopRequireDefault(require("./js/App"));
@@ -424,7 +464,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61767" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57770" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
