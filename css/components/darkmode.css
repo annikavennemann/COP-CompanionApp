@@ -35,10 +35,11 @@ body.darkmode svg {
 body.darkmode .journal-entry__icon--light {
     color: #E0E4E8;
 }
-
+/*
 body.darkmode header {
     background-image: url('../../images/background_shape_1-dark.svg');
 }
+*/
 
 body.darkmode h1, 
 body.darkmode h2, 
