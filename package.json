@@ -1,0 +1,22 @@
+{
+  "name": "cop-companionapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annikavennemann/COP-CompanionApp.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/annikavennemann/COP-CompanionApp/issues"
+  },
+  "homepage": "https://github.com/annikavennemann/COP-CompanionApp#readme",
+  "dependencies": {
+    "parcel": "^1.12.4"
+  }
+}
