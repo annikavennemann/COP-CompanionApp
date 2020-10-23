@@ -1,11 +1,14 @@
 import Header from './components/Header';
 import Nav from './components/Nav'
+import { createElement} from './ui-framework'
 import BuddyList from './components/BuddyList'
-import Journal from './components/Journal'
+
+
 
 
 export default () => {
     const headerComponent = Header();
+    const main = createElement('main')
 
     const members = [
         {
@@ -49,9 +52,9 @@ export default () => {
             Nachname: 'Jobs'
         }
     ];
+
   
-  BuddyList(members)
-  Journal()
+  BuddyList(members) 
   Nav((headerTitle, headerSubtitle) => headerComponent.update(headerTitle, headerSubtitle))
 }
 

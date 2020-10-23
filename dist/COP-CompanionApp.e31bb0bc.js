@@ -174,56 +174,6 @@ var _default = function _default() {
 };
 
 exports.default = _default;
-},{"../ui-framework":"js/ui-framework/index.js"}],"js/components/Nav.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = Nav;
-
-var _uiFramework = require("../ui-framework");
-
-function Nav(onClick) {
-  var footer = (0, _uiFramework.createElement)('footer', document.body, 'side__footer');
-  var nav = (0, _uiFramework.createElement)('nav', footer, 'nav__footer');
-  var navList = (0, _uiFramework.createElement)('ul', nav, 'nav_list', '');
-  var navInfo = [{
-    headline: 'Dashboard',
-    subHeadline: null,
-    class: 'nav__button--dashboard',
-    href: '#dashboard'
-  }, {
-    headline: 'Code Buddys',
-    subHeadline: 'on Monday - 26.10.2020',
-    class: 'nav__button--buddy',
-    href: '#buddy'
-  }, {
-    headline: 'Teams',
-    subHeadline: 'for Exercise 1',
-    class: 'nav__button--teams',
-    href: '#teams'
-  }, {
-    headline: 'Energy',
-    subHeadline: null,
-    class: 'nav__button--energy',
-    href: '#energy'
-  }, {
-    headline: 'Journal',
-    subHeadline: null,
-    class: 'nav__button--journal',
-    href: '#journal'
-  }];
-  navInfo.forEach(function (title) {
-    var linkElement = (0, _uiFramework.createElement)('li', navList, title.class);
-    linkElement.setAttribute('data-href', title.href); // const iconNav = createElement('img', linkElement, 'nav__button--dashboard')
-    // iconNav = title.source
-
-    linkElement.addEventListener('click', function (event) {
-      onClick(title.headline, title.subHeadline);
-    });
-  });
-}
 },{"../ui-framework":"js/ui-framework/index.js"}],"js/components/Journal/JournalCard.js":[function(require,module,exports) {
 "use strict";
 
@@ -237,30 +187,25 @@ var _uiFramework = require("./../../ui-framework");
 var _default = function _default(journal, journalList) {
   journal.forEach(function (entry) {
     var journalElement = (0, _uiFramework.createElement)('li', journalList, 'journal-entry__card');
-    var journalElementHeadline = (0, _uiFramework.createElement)('h2', journalElement, 'journal-entry__card__title', entry.datum);
-    journalElementHeadline.classList.add('global__headline2');
+    var journalElementHeadline = (0, _uiFramework.createElement)('h2', journalElement, ['journal-entry__card__title', 'global__headline2'], entry.datum);
     /*Rating*/
 
-    var journalElementRating = (0, _uiFramework.createElement)('div', journalElement, 'journal-entry__item');
-    journalElementRating.classList.add('journal-entry__rating');
+    var journalElementRating = (0, _uiFramework.createElement)('div', journalElement, ['journal-entry__item', 'journal-entry__rating']);
     var ratingHeadline = (0, _uiFramework.createElement)('h3', journalElementRating, 'journal-entry__item__title', 'Rating:');
     var ratingStars = (0, _uiFramework.createElement)('p', journalElementRating, '', entry.rating);
     /*Comprehension*/
 
-    var journalElementComprehension = (0, _uiFramework.createElement)('div', journalElement, 'journal-entry__item');
-    journalElementComprehension.classList.add('journal-entry__comprehension');
+    var journalElementComprehension = (0, _uiFramework.createElement)('div', journalElement, ['journal-entry__item', 'journal-entry__comprehension']);
     var comprehensionHeadline = (0, _uiFramework.createElement)('h3', journalElementComprehension, 'journal-entry__item__title', 'Comprehension:');
     var ratingRectangles = (0, _uiFramework.createElement)('p', journalElementComprehension, '', entry.comprehension);
     /*Motto*/
 
-    var journalElementMotto = (0, _uiFramework.createElement)('div', journalElement, 'journal-entry__item');
-    journalElementMotto.classList.add('journal-entry__motto');
+    var journalElementMotto = (0, _uiFramework.createElement)('div', journalElement, ['journal-entry__item', 'journal-entry__motto']);
     var mottoHeadline = (0, _uiFramework.createElement)('h3', journalElementMotto, 'journal-entry__item__title', 'Motto:');
     var mottoText = (0, _uiFramework.createElement)('p', journalElementMotto, '', entry.motto);
     /*Notes*/
 
-    var journalElementNotes = (0, _uiFramework.createElement)('div', journalElement, 'journal-entry__item');
-    journalElementNotes.classList.add('journal-entry__notes');
+    var journalElementNotes = (0, _uiFramework.createElement)('div', journalElement, ['journal-entry__item', 'journal-entry__notes']);
     var notesHeadline = (0, _uiFramework.createElement)('h3', journalElementNotes, 'journal-entry__item__title', 'Notes:');
     var notesText = (0, _uiFramework.createElement)('p', journalElementNotes, '', entry.notes);
   });
@@ -282,13 +227,11 @@ var _JournalCard = _interopRequireDefault(require("./JournalCard"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = function _default(journal) {
-  var section = (0, _uiFramework.createElement)('section');
+  var main = document.querySelector('main');
+  var section = (0, _uiFramework.createElement)('section', main);
   section.id = 'journal'; //Button
-  //Wie kann ich direkt mehrere Klassen einbauen?
 
-  var rateTodayBtn = (0, _uiFramework.createElement)('button', section, ['nav__button', 'journal-entry__button'], 'Rate today');
-  /*rateTodayBtn.classList.add('journal-entry__button')*/
-  //Journal-List
+  var rateTodayBtn = (0, _uiFramework.createElement)('button', section, ['nav__button', 'journal-entry__button'], 'Rate today'); //Journal-List
 
   var journalList = (0, _uiFramework.createElement)('ul', section, 'nav__journal-list'); //Journal-Card
 
@@ -330,7 +273,65 @@ var _default = function _default() {
 };
 
 exports.default = _default;
-},{"./Journal/JournalSection":"js/components/Journal/JournalSection.js"}],"js/App.js":[function(require,module,exports) {
+},{"./Journal/JournalSection":"js/components/Journal/JournalSection.js"}],"js/components/Nav.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Nav;
+
+var _uiFramework = require("../ui-framework");
+
+var _Journal = _interopRequireDefault(require("./Journal"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Nav(onClick) {
+  var footer = (0, _uiFramework.createElement)('footer', document.body, 'side__footer');
+  var nav = (0, _uiFramework.createElement)('nav', footer, 'nav__footer');
+  var navList = (0, _uiFramework.createElement)('ul', nav, 'nav_list', '');
+  var navInfo = [{
+    headline: 'Dashboard',
+    subHeadline: null,
+    class: 'nav__button--dashboard',
+    href: '#dashboard'
+  }, {
+    headline: 'Code Buddys',
+    subHeadline: 'on Monday - 26.10.2020',
+    class: 'nav__button--buddy',
+    href: '#buddy'
+  }, {
+    headline: 'Teams',
+    subHeadline: 'for Exercise 1',
+    class: 'nav__button--teams',
+    href: '#teams'
+  }, {
+    headline: 'Energy',
+    subHeadline: null,
+    class: 'nav__button--energy',
+    href: '#energy'
+  }, {
+    headline: 'Journal',
+    subHeadline: null,
+    class: 'nav__button--journal',
+    href: '#journal',
+    show: function show() {
+      return (0, _Journal.default)();
+    }
+  }];
+  navInfo.forEach(function (title) {
+    var linkElement = (0, _uiFramework.createElement)('li', navList, title.class);
+    linkElement.setAttribute('data-href', title.href); // const iconNav = createElement('img', linkElement, 'nav__button--dashboard')
+    // iconNav = title.source
+
+    linkElement.addEventListener('click', function (event) {
+      onClick(title.headline, title.subHeadline);
+      title.show();
+    });
+  });
+}
+},{"../ui-framework":"js/ui-framework/index.js","./Journal":"js/components/Journal.js"}],"js/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -342,12 +343,14 @@ var _Header = _interopRequireDefault(require("./components/Header"));
 
 var _Nav = _interopRequireDefault(require("./components/Nav"));
 
-var _Journal = _interopRequireDefault(require("./components/Journal"));
+var _uiFramework = require("./ui-framework");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/*import Journal from './components/Journal'*/
 var _default = function _default() {
   var headerComponent = (0, _Header.default)();
+  var main = (0, _uiFramework.createElement)('main');
   var members = [{
     Vorname: 'Tine',
     Nachname: 'Krüger'
@@ -379,14 +382,13 @@ var _default = function _default() {
     Vorname: 'Steve',
     Nachname: 'Jobs'
   }];
-  (0, _Journal.default)();
   (0, _Nav.default)(function (headerTitle, headerSubtitle) {
     return headerComponent.update(headerTitle, headerSubtitle);
   });
 };
 
 exports.default = _default;
-},{"./components/Header":"js/components/Header.js","./components/Nav":"js/components/Nav.js","./components/Journal":"js/components/Journal.js"}],"index.js":[function(require,module,exports) {
+},{"./components/Header":"js/components/Header.js","./components/Nav":"js/components/Nav.js","./ui-framework":"js/ui-framework/index.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _App = _interopRequireDefault(require("./js/App"));
@@ -422,7 +424,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56752" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61767" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

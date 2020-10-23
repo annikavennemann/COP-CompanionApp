@@ -1,4 +1,5 @@
 import { createElement } from '../ui-framework';
+import Journal from './Journal';
 
 export default function Nav(onClick) {
     const footer = createElement('footer', document.body, 'side__footer')
@@ -35,7 +36,10 @@ export default function Nav(onClick) {
             headline: 'Journal',
             subHeadline: null,
             class: 'nav__button--journal',
-            href: '#journal'
+            href: '#journal',
+            show: function() {
+                return Journal()
+            }
         }
     ]
 
@@ -46,6 +50,7 @@ export default function Nav(onClick) {
         // iconNav = title.source
         linkElement.addEventListener('click', function (event) {
             onClick(title.headline, title.subHeadline);
+            title.show()
             
         });  
     });
