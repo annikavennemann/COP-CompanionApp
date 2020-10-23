@@ -154,8 +154,8 @@ var _uiFramework = require("../ui-framework");
 
 var _default = function _default(pair, parent) {
   var buddyListElement = (0, _uiFramework.createElement)('li', parent, 'buddy__pair');
-  var buddyOne = (0, _uiFramework.createElement)('p', buddyListElement, 'buddy', pair[0].Vorname);
-  var buddyTwo = (0, _uiFramework.createElement)('p', buddyListElement, 'buddy', pair[1].Vorname);
+  var buddyOne = (0, _uiFramework.createElement)('p', buddyListElement, 'buddy', pair[0].Vorname + ' ' + pair[0].Nachname);
+  var buddyTwo = (0, _uiFramework.createElement)('p', buddyListElement, 'buddy', pair[1].Vorname + ' ' + pair[1].Nachname);
 };
 
 exports.default = _default;
@@ -267,7 +267,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56079" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56638" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
