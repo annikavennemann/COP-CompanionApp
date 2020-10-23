@@ -8,8 +8,8 @@ export default (journal) => {
 
     //Button
     //Wie kann ich direkt mehrere Klassen einbauen?
-    const rateTodayBtn = createElement('button', section, 'nav__button', 'Rate today')
-    rateTodayBtn.classList.add('journal-entry__button')
+    const rateTodayBtn = createElement('button', section, ['nav__button', 'journal-entry__button'], 'Rate today')
+    /*rateTodayBtn.classList.add('journal-entry__button')*/
 
     //Journal-List
     const journalList = createElement('ul', section, 'nav__journal-list')

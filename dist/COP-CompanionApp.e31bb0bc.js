@@ -136,12 +136,19 @@ function createElement(tag) {
     newElement.textContent = text;
   }
 
-  if (cssClass) {
+  if (Array.isArray(cssClass)) {
+    cssClass.forEach(function (currywurst) {
+      newElement.classList.add(currywurst);
+    });
+  } else if (cssClass) {
     newElement.classList.add(cssClass);
   }
 
   return newElement;
 }
+/*cssClass.forEach((class) => {
+    newElement.classList.add(class)
+})*/
 },{}],"js/components/Header.js":[function(require,module,exports) {
 "use strict";
 
@@ -279,8 +286,9 @@ var _default = function _default(journal) {
   section.id = 'journal'; //Button
   //Wie kann ich direkt mehrere Klassen einbauen?
 
-  var rateTodayBtn = (0, _uiFramework.createElement)('button', section, 'nav__button', 'Rate today');
-  rateTodayBtn.classList.add('journal-entry__button'); //Journal-List
+  var rateTodayBtn = (0, _uiFramework.createElement)('button', section, ['nav__button', 'journal-entry__button'], 'Rate today');
+  /*rateTodayBtn.classList.add('journal-entry__button')*/
+  //Journal-List
 
   var journalList = (0, _uiFramework.createElement)('ul', section, 'nav__journal-list'); //Journal-Card
 
@@ -414,7 +422,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63482" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56752" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
