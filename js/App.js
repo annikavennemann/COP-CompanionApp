@@ -1,4 +1,4 @@
-import Buddys from './components/Buddys'
+import BuddyList from './components/BuddyList'
 
 export default () => {
     const members = [
@@ -44,5 +44,5 @@ export default () => {
         }
     ]
 
-    Buddys()
+    BuddyList(members)
 }
