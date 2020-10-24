@@ -30,22 +30,12 @@
     border-bottom: none;
 }
 
-/* .buddy__one__plus {
-    position: absolute;
-    bottom: -11.3px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    color: #193251;
-} */
-
-
 .buddy__plus-icon {
     background-image: url('../../images/plusIcon.svg');
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
-    bottom: -14px;
+    bottom: -14.5px;
     left: 0;
     right: 0;
     height: 1.7rem;
