@@ -13,15 +13,15 @@ export default function Nav(onClick) {
             subHeadline: null,
             class: 'nav__button--dashboard',
             href: '#dashboard',
-            show: function() {
-                return Buddys()
-            }
         },
         {
             headline: 'Code Buddys',
             subHeadline: 'on Monday - 26.10.2020',
             class: 'nav__button--buddy',
-            href: '#buddy'
+            href: '#buddy',
+            show: function() {
+                return Buddys()
+            }
         },
         {
             headline: 'Teams',
