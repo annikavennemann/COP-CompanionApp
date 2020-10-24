@@ -214,7 +214,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"node_modules/parcel/src/builtins/css-loader.js"}],"css/components/energy.css":[function(require,module,exports) {
+},{"./../../images/plusIcon.svg":[["plusIcon.5c4b033d.svg","images/plusIcon.svg"],"images/plusIcon.svg"],"_css_loader":"node_modules/parcel/src/builtins/css-loader.js"}],"css/components/energy.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -257,7 +257,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50570" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51254" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

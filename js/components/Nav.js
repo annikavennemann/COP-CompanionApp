@@ -45,9 +45,6 @@ export default function Nav(onClick) {
 
     navInfo.forEach((title) => {
         const linkElement = createElement('li', navList, title.class);
-        linkElement.setAttribute('data-href', title.href)
-        // const iconNav = createElement('img', linkElement, 'nav__button--dashboard')
-        // iconNav = title.source
         linkElement.addEventListener('click', function (event) {
             onClick(title.headline, title.subHeadline);
             deleteElement('.section-delete')
