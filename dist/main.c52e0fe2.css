@@ -379,12 +379,9 @@ input[type="radio"]:checked ~ .journal-form__star  {
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
-    /* bottom: -11.3px; */
+    bottom: -14px;
     left: 0;
     right: 0;
-    margin: 0 auto;
-    color: #193251;
-    width: 18%;
     height: 1.7rem;
 }
 .page-margin__energy {

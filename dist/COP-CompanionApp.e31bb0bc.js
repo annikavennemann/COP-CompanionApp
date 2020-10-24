@@ -338,7 +338,7 @@ var _uiFramework = require("../ui-framework");
 var _default = function _default(pair, parent) {
   var buddyListElement = (0, _uiFramework.createElement)('li', parent, 'buddy__pair');
   var buddyOne = (0, _uiFramework.createElement)('p', buddyListElement, ['buddy', 'buddy__one'], pair[0].Vorname + ' ' + pair[0].Nachname);
-  var plusIconSvg = (0, _uiFramework.createElement)('div', buddyListElement, 'buddy__plus-icon');
+  var plusIconSvg = (0, _uiFramework.createElement)('div', buddyOne, 'buddy__plus-icon');
   var buddyTwo = (0, _uiFramework.createElement)('p', buddyListElement, ['buddy', 'buddy__two'], pair[1].Vorname + ' ' + pair[1].Nachname); // plusIconSvg.setAttribute('viewBox','0 0 21 21');
   // plusIconSvg.setAttribute('width','21px');
   // plusIconSvg.setAttribute('height','21px')
@@ -471,7 +471,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57727" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57766" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
