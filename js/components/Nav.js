@@ -1,4 +1,4 @@
-import { createElement } from '../ui-framework';
+import { createElement, deleteElement } from '../ui-framework';
 import Journal from './Journal';
 
 export default function Nav(onClick) {
@@ -50,6 +50,7 @@ export default function Nav(onClick) {
         // iconNav = title.source
         linkElement.addEventListener('click', function (event) {
             onClick(title.headline, title.subHeadline);
+            deleteElement('.section-delete')
             title.show()
             
         });  
