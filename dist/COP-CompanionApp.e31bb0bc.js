@@ -225,7 +225,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var _default = function _default(journal) {
   var main = document.querySelector('main');
-  var section = (0, _uiFramework.createElement)('section', main);
+  var section = (0, _uiFramework.createElement)('section', main, 'section-delete');
   section.id = 'journal'; //Button
 
   var rateTodayBtn = (0, _uiFramework.createElement)('button', section, ['nav__button', 'journal-entry__button'], 'Rate today'); //Journal-List
@@ -270,62 +270,7 @@ var _default = function _default() {
 };
 
 exports.default = _default;
-},{"./Journal/JournalSection":"js/components/Journal/JournalSection.js"}],"js/components/Nav.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = Nav;
-
-var _uiFramework = require("../ui-framework");
-
-var _Journal = _interopRequireDefault(require("./Journal"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function Nav(onClick) {
-  var footer = (0, _uiFramework.createElement)('footer', document.body, 'side__footer');
-  var nav = (0, _uiFramework.createElement)('nav', footer, 'nav__footer');
-  var navList = (0, _uiFramework.createElement)('ul', nav, 'nav_list', '');
-  var navInfo = [{
-    headline: 'Dashboard',
-    subHeadline: null,
-    class: 'nav__button--dashboard',
-    href: '#dashboard'
-  }, {
-    headline: 'Code Buddys',
-    subHeadline: 'on Monday - 26.10.2020',
-    class: 'nav__button--buddy',
-    href: '#buddy'
-  }, {
-    headline: 'Teams',
-    subHeadline: 'for Exercise 1',
-    class: 'nav__button--teams',
-    href: '#teams'
-  }, {
-    headline: 'Energy',
-    subHeadline: null,
-    class: 'nav__button--energy',
-    href: '#energy'
-  }, {
-    headline: 'Journal',
-    subHeadline: null,
-    class: 'nav__button--journal',
-    href: '#journal',
-    show: function show() {
-      return (0, _Journal.default)();
-    }
-  }];
-  navInfo.forEach(function (title) {
-    var linkElement = (0, _uiFramework.createElement)('li', navList, title.class);
-    linkElement.addEventListener('click', function (event) {
-      onClick(title.headline, title.subHeadline);
-      title.show();
-    });
-  });
-}
-},{"../ui-framework":"js/ui-framework/index.js","./Journal":"js/components/Journal.js"}],"js/components/BuddyPair.js":[function(require,module,exports) {
+},{"./Journal/JournalSection":"js/components/Journal/JournalSection.js"}],"js/components/BuddyPair.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -339,14 +284,7 @@ var _default = function _default(pair, parent) {
   var buddyListElement = (0, _uiFramework.createElement)('li', parent, 'buddy__pair');
   var buddyOne = (0, _uiFramework.createElement)('p', buddyListElement, ['buddy', 'buddy__one'], pair[0].Vorname + ' ' + pair[0].Nachname);
   var plusIconSvg = (0, _uiFramework.createElement)('div', buddyOne, 'buddy__plus-icon');
-  var buddyTwo = (0, _uiFramework.createElement)('p', buddyListElement, ['buddy', 'buddy__two'], pair[1].Vorname + ' ' + pair[1].Nachname); // plusIconSvg.setAttribute('viewBox','0 0 21 21');
-  // plusIconSvg.setAttribute('width','21px');
-  // plusIconSvg.setAttribute('height','21px')
-  // plusIconSvg.setAttribute('fill','currentColor')
-  // plusIconSvg.setAttribute('version','1.1')
-  // plusIconSvg.setAttribute('xmlns','http://www.w3.org/2000/svg')
-  // plusIconPath.setAttribute('d', "M10.1666667,-7.10542736e-15 C11.2210285,-7.10542736e-15 12.0848318,0.815877791 12.1611809,1.85073766 L12.1666667,2 L12.1666667,8.16566667 L18.3333333,8.16666667 C19.4379028,8.16666667 20.3333333,9.06209717 20.3333333,10.1666667 C20.3333333,11.2210285 19.5174555,12.0848318 18.4825957,12.1611809 L18.3333333,12.1666667 L12.1666667,12.1656667 L12.1666667,18.3333333 C12.1666667,19.4379028 11.2712362,20.3333333 10.1666667,20.3333333 C9.11230487,20.3333333 8.24850154,19.5174555 8.1721524,18.4825957 L8.16666667,18.3333333 L8.16666667,12.1656667 L2,12.1666667 C0.8954305,12.1666667 3.01980663e-14,11.2712362 3.01980663e-14,10.1666667 C3.01980663e-14,9.11230487 0.815877791,8.24850154 1.85073766,8.1721524 L2,8.16666667 L8.16666667,8.16566667 L8.16666667,2 C8.16666667,0.8954305 9.06209717,-7.10542736e-15 10.1666667,-7.10542736e-15 Z" )
-  // plusIconPath.id = 'Path'
+  var buddyTwo = (0, _uiFramework.createElement)('p', buddyListElement, ['buddy', 'buddy__two'], pair[1].Vorname + ' ' + pair[1].Nachname);
 };
 
 exports.default = _default;
@@ -376,7 +314,7 @@ var _default = function _default(members) {
 };
 
 exports.default = _default;
-},{"../ui-framework":"js/ui-framework/index.js","./BuddyPair":"js/components/BuddyPair.js"}],"js/App.js":[function(require,module,exports) {
+},{"../ui-framework":"js/ui-framework/index.js","./BuddyPair":"js/components/BuddyPair.js"}],"js/components/Buddys.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -384,19 +322,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _Header = _interopRequireDefault(require("./components/Header"));
-
-var _Nav = _interopRequireDefault(require("./components/Nav"));
-
-var _uiFramework = require("./ui-framework");
-
-var _BuddyList = _interopRequireDefault(require("./components/BuddyList"));
+var _BuddyList = _interopRequireDefault(require("./BuddyList"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = function _default() {
-  var headerComponent = (0, _Header.default)();
-  var main = (0, _uiFramework.createElement)('main');
   var members = [{
     Vorname: 'Tine',
     Nachname: 'Krüger'
@@ -429,13 +359,95 @@ var _default = function _default() {
     Nachname: 'Jobs'
   }];
   (0, _BuddyList.default)(members);
+};
+
+exports.default = _default;
+},{"./BuddyList":"js/components/BuddyList.js"}],"js/components/Nav.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Nav;
+
+var _uiFramework = require("../ui-framework");
+
+var _Journal = _interopRequireDefault(require("./Journal"));
+
+var _Buddys = _interopRequireDefault(require("./Buddys"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Nav(onClick) {
+  var footer = (0, _uiFramework.createElement)('footer', document.body, 'side__footer');
+  var nav = (0, _uiFramework.createElement)('nav', footer, 'nav__footer');
+  var navList = (0, _uiFramework.createElement)('ul', nav, 'nav_list', '');
+  var navInfo = [{
+    headline: 'Dashboard',
+    subHeadline: null,
+    class: 'nav__button--dashboard',
+    href: '#dashboard',
+    show: function show() {
+      return (0, _Buddys.default)();
+    }
+  }, {
+    headline: 'Code Buddys',
+    subHeadline: 'on Monday - 26.10.2020',
+    class: 'nav__button--buddy',
+    href: '#buddy'
+  }, {
+    headline: 'Teams',
+    subHeadline: 'for Exercise 1',
+    class: 'nav__button--teams',
+    href: '#teams'
+  }, {
+    headline: 'Energy',
+    subHeadline: null,
+    class: 'nav__button--energy',
+    href: '#energy'
+  }, {
+    headline: 'Journal',
+    subHeadline: null,
+    class: 'nav__button--journal',
+    href: '#journal',
+    show: function show() {
+      return (0, _Journal.default)();
+    }
+  }];
+  navInfo.forEach(function (title) {
+    var linkElement = (0, _uiFramework.createElement)('li', navList, title.class);
+    linkElement.addEventListener('click', function (event) {
+      onClick(title.headline, title.subHeadline);
+      title.show();
+    });
+  });
+}
+},{"../ui-framework":"js/ui-framework/index.js","./Journal":"js/components/Journal.js","./Buddys":"js/components/Buddys.js"}],"js/App.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _Header = _interopRequireDefault(require("./components/Header"));
+
+var _Nav = _interopRequireDefault(require("./components/Nav"));
+
+var _uiFramework = require("./ui-framework");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _default = function _default() {
+  var headerComponent = (0, _Header.default)();
+  var main = (0, _uiFramework.createElement)('main');
   (0, _Nav.default)(function (headerTitle, headerSubtitle) {
     return headerComponent.update(headerTitle, headerSubtitle);
   });
 };
 
 exports.default = _default;
-},{"./components/Header":"js/components/Header.js","./components/Nav":"js/components/Nav.js","./ui-framework":"js/ui-framework/index.js","./components/BuddyList":"js/components/BuddyList.js"}],"index.js":[function(require,module,exports) {
+},{"./components/Header":"js/components/Header.js","./components/Nav":"js/components/Nav.js","./ui-framework":"js/ui-framework/index.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _App = _interopRequireDefault(require("./js/App"));
@@ -471,7 +483,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57766" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58130" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
