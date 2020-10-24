@@ -34,3 +34,5 @@ export function deleteElement(delClass) {
 /*cssClass.forEach((class) => {
     newElement.classList.add(class)
 })*/
+
+
