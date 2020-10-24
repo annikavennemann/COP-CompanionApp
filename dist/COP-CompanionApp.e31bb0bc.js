@@ -146,9 +146,6 @@ function createElement(tag) {
 
   return newElement;
 }
-/*cssClass.forEach((class) => {
-    newElement.classList.add(class)
-})*/
 },{}],"js/components/Header.js":[function(require,module,exports) {
 "use strict";
 
@@ -340,8 +337,16 @@ var _uiFramework = require("../ui-framework");
 
 var _default = function _default(pair, parent) {
   var buddyListElement = (0, _uiFramework.createElement)('li', parent, 'buddy__pair');
-  var buddyOne = (0, _uiFramework.createElement)('p', buddyListElement, 'buddy', pair[0].Vorname + ' ' + pair[0].Nachname);
-  var buddyTwo = (0, _uiFramework.createElement)('p', buddyListElement, 'buddy', pair[1].Vorname + ' ' + pair[1].Nachname);
+  var buddyOne = (0, _uiFramework.createElement)('p', buddyListElement, ['buddy', 'buddy__one'], pair[0].Vorname + ' ' + pair[0].Nachname);
+  var plusIconSvg = (0, _uiFramework.createElement)('div', buddyOne, 'buddy__plus-icon');
+  var buddyTwo = (0, _uiFramework.createElement)('p', buddyListElement, ['buddy', 'buddy__two'], pair[1].Vorname + ' ' + pair[1].Nachname); // plusIconSvg.setAttribute('viewBox','0 0 21 21');
+  // plusIconSvg.setAttribute('width','21px');
+  // plusIconSvg.setAttribute('height','21px')
+  // plusIconSvg.setAttribute('fill','currentColor')
+  // plusIconSvg.setAttribute('version','1.1')
+  // plusIconSvg.setAttribute('xmlns','http://www.w3.org/2000/svg')
+  // plusIconPath.setAttribute('d', "M10.1666667,-7.10542736e-15 C11.2210285,-7.10542736e-15 12.0848318,0.815877791 12.1611809,1.85073766 L12.1666667,2 L12.1666667,8.16566667 L18.3333333,8.16666667 C19.4379028,8.16666667 20.3333333,9.06209717 20.3333333,10.1666667 C20.3333333,11.2210285 19.5174555,12.0848318 18.4825957,12.1611809 L18.3333333,12.1666667 L12.1666667,12.1656667 L12.1666667,18.3333333 C12.1666667,19.4379028 11.2712362,20.3333333 10.1666667,20.3333333 C9.11230487,20.3333333 8.24850154,19.5174555 8.1721524,18.4825957 L8.16666667,18.3333333 L8.16666667,12.1656667 L2,12.1666667 C0.8954305,12.1666667 3.01980663e-14,11.2712362 3.01980663e-14,10.1666667 C3.01980663e-14,9.11230487 0.815877791,8.24850154 1.85073766,8.1721524 L2,8.16666667 L8.16666667,8.16566667 L8.16666667,2 C8.16666667,0.8954305 9.06209717,-7.10542736e-15 10.1666667,-7.10542736e-15 Z" )
+  // plusIconPath.id = 'Path'
 };
 
 exports.default = _default;
@@ -360,7 +365,9 @@ var _BuddyPair = _interopRequireDefault(require("./BuddyPair"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = function _default(members) {
-  var buddySection = (0, _uiFramework.createElement)('section', document.body, 'buddy-section');
+  var main = document.querySelector('main');
+  var buddySection = (0, _uiFramework.createElement)('section', main, 'buddy-section');
+  buddySection.id = 'journal';
   var buddyList = (0, _uiFramework.createElement)('ul', buddySection, 'buddy__list');
   var buddyPairs = [members.slice(0, 2), members.slice(2, 4), members.slice(4, 6), members.slice(6, 8), members.slice(8, 10)];
   buddyPairs.forEach(function (pair) {
@@ -464,7 +471,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57770" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57766" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

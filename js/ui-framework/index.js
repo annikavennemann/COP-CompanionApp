@@ -23,7 +23,3 @@ export function createElement(
 
     return newElement;
 }
-
-/*cssClass.forEach((class) => {
-    newElement.classList.add(class)
-})*/
