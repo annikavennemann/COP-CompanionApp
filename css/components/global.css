@@ -5,6 +5,11 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+main {
+    margin:70px 30px;  
+}
+
+
 .global__headline2 {
     font-weight: 600;
     font-size: 14px;
