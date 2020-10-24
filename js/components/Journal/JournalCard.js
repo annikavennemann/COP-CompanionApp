@@ -1,6 +1,6 @@
-import {createElement} from './../../ui-framework'
+import {createElement, createSvg} from './../../ui-framework'
 
-export default (journal, journalList) => {
+export default (journal, svg, journalList) => {
     journal.forEach((entry) => {
         const journalElement = createElement('li', journalList, 'journal-entry__card')
         const journalElementHeadline = createElement('h2', journalElement, ['journal-entry__card__title', 'global__headline2'], entry.datum )
@@ -8,12 +8,25 @@ export default (journal, journalList) => {
         /*Rating*/
         const journalElementRating = createElement('div', journalElement, ['journal-entry__item', 'journal-entry__rating'] )
         const ratingHeadline = createElement('h3', journalElementRating, 'journal-entry__item__title', 'Rating:')
-        const ratingStars = createElement('p', journalElementRating, '', entry.rating)
+        const ratingStarsNumber = createElement('p', journalElementRating, '', entry.rating)
+
+        /*Star*/
+        const ratingStarsSvg = createSvg(Object.values(svg.star), Object.values(svg.star.path), 'path')
+        for (let i = 1; i < 6; i++) {
+            const star = journalElementRating.appendChild(ratingStarsSvg.cloneNode(true)) 
+        }
+       
 
         /*Comprehension*/
         const journalElementComprehension = createElement('div', journalElement, ['journal-entry__item', 'journal-entry__comprehension'])
         const comprehensionHeadline = createElement('h3', journalElementComprehension, 'journal-entry__item__title', 'Comprehension:')
         const ratingRectangles = createElement('p', journalElementComprehension, '', entry.comprehension)
+        
+        /*Rectangle*/
+        const rectangleSvg = createSvg(Object.values(svg.rectangle), Object.values(svg.rectangle.path), 'rect')
+        for (let i = 1; i < 11; i++) {
+            const star = journalElementComprehension.appendChild(rectangleSvg.cloneNode(true)) 
+        }
 
         /*Motto*/
         const journalElementMotto = createElement('div', journalElement, ['journal-entry__item', 'journal-entry__motto'])
