@@ -5,7 +5,13 @@
 .energy__grafic {
     display: block;
     margin-bottom: 20px;
-    width: 100%;
+    background-image: url(../../images/energy.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 315px;
+    height: 207px;
+    border-color: transparent;
 }
 
 .energylevel {

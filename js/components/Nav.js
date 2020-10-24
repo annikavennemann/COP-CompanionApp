@@ -1,6 +1,7 @@
 import { createElement, deleteElement } from '../ui-framework';
 import Journal from './Journal';
 import Buddys from './Buddys'
+import Energy from './Energy';
 
 export default function Nav(onClick) {
     const footer = createElement('footer', document.body, 'side__footer')
@@ -34,7 +35,10 @@ export default function Nav(onClick) {
             headline: 'Energy',
             subHeadline: null,
             class: 'nav__button--energy',
-            href: '#energy'
+            href: '#energy',
+            show: function() {
+                return Energy()
+            }
         },
         {
             headline: 'Journal',

@@ -1,8 +1,6 @@
 import Header from './components/Header';
-import Nav from './components/Nav'
+import Nav from './components/Nav';
 import { createElement} from './ui-framework'
-
-
 
 
 export default () => {
