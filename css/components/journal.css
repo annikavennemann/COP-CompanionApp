@@ -72,13 +72,13 @@
     margin-left: 1.5em;
 }*/
 
-.journal-entry__motto__text {
+.journal-entry__motto {
     color: #193251;
     font-size: 16px;
     font-weight: 600;
 }
 
-.journal-entry__notes__text {
+.journal-entry__notes {
     color: #193251;
     font-size: 14px;
     font-weight: 400;
