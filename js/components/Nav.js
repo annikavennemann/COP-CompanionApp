@@ -1,4 +1,4 @@
-import { createElement } from '../ui-framework';
+import { createElement, deleteElement } from '../ui-framework';
 import Journal from './Journal';
 import Buddys from './Buddys'
 
@@ -51,6 +51,7 @@ export default function Nav(onClick) {
         const linkElement = createElement('li', navList, title.class);
         linkElement.addEventListener('click', function (event) {
             onClick(title.headline, title.subHeadline);
+            deleteElement('.section-delete')
             title.show()
             
         });  
