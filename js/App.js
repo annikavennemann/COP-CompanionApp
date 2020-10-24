@@ -9,7 +9,6 @@ import BuddyList from './components/BuddyList'
 export default () => {
     const headerComponent = Header();
     const main = createElement('main')
-
     const members = [
         {
             Vorname: 'Tine',

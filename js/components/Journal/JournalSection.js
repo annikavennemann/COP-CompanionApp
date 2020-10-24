@@ -4,7 +4,7 @@ import JournalCard from './JournalCard'
 
 export default (journal) => {
     const main = document.querySelector('main')
-    const section = createElement('section', main)
+    const section = createElement('section', main, 'section-delete')
     section.id = 'journal'
 
     //Button

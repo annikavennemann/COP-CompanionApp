@@ -368,8 +368,8 @@ input[type="radio"]:checked ~ .journal-form__star  {
     margin-bottom: .3em;
 }
 
+.buddy__list {
 
-.buddy__list__day{
     list-style: none;
     padding: 0;
     margin-top: 50px;
@@ -559,7 +559,5 @@ body.darkmode .team__member-name {
 body.darkmode .nav__button {
     filter: brightness(10)
 }
-
-
 
 /*# sourceMappingURL=/main.c52e0fe2.css.map */

@@ -24,6 +24,13 @@ export function createElement(
     return newElement;
 }
 
+export function deleteElement(delClass) {
+    const delSections = document.querySelectorAll(delClass)
+            delSections.forEach((section) => {
+                section.remove()
+            })
+}
+
 /*cssClass.forEach((class) => {
     newElement.classList.add(class)
 })*/

@@ -2,7 +2,7 @@ import { createElement } from '../ui-framework'
 import BuddyPair from './BuddyPair'
 
 export default (members) => {
-    const buddySection = createElement('section', document.body, 'buddy-section')
+    const buddySection = createElement('section', document.body, ['buddy-section', 'section-delete'])
     const buddyList = createElement('ul', buddySection, 'buddy__list')
 
     const buddyPairs = [
