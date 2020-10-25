@@ -42,6 +42,11 @@
 
 }
 
+.svg-container {
+    display: flex;
+    flex-direction: row;
+}
+
 .journal-entry__rating,
 .journal-entry__comprehension {
     align-items: center;
