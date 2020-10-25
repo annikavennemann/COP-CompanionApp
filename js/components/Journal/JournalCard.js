@@ -12,10 +12,10 @@ export default (journal, svg, journalList) => {
 
         /*Star*/
         const ratingStarsSvg = createSvg(Object.values(svg.star), Object.values(svg.star.path), 'path')
+        ratingStarsSvg.classList.add('journal-entry__star') //kann noch in die createSvg-Funktion verschoben werden
         for (let i = 1; i < 6; i++) {
             const star = journalElementRating.appendChild(ratingStarsSvg.cloneNode(true)) 
         }
-       
 
         /*Comprehension*/
         const journalElementComprehension = createElement('div', journalElement, ['journal-entry__item', 'journal-entry__comprehension'])
@@ -24,6 +24,7 @@ export default (journal, svg, journalList) => {
         
         /*Rectangle*/
         const rectangleSvg = createSvg(Object.values(svg.rectangle), Object.values(svg.rectangle.path), 'rect')
+        rectangleSvg.classList.add('journal-entry__icon') //kann noch in die createSvg-Funktion verschoben werden
         for (let i = 1; i < 11; i++) {
             const star = journalElementComprehension.appendChild(rectangleSvg.cloneNode(true)) 
         }
