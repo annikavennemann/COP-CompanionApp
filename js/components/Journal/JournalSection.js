@@ -2,10 +2,11 @@ import {createElement} from './../../ui-framework'
 import JournalCard from './JournalCard'
 
 
-export default (journal) => {
+export default (journal, svg) => {
     const main = document.querySelector('main')
     const section = createElement('section', main, 'section-delete')
     section.id = 'journal'
+    
 
     //Button
     const rateTodayBtn = createElement('button', section, ['nav__button', 'journal-entry__button'], 'Rate today')
@@ -14,6 +15,6 @@ export default (journal) => {
     const journalList = createElement('ul', section, 'nav__journal-list')
 
     //Journal-Card
-    JournalCard(journal, journalList)
+    JournalCard(journal, svg,  journalList)
     
 }
