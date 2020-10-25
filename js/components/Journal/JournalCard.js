@@ -17,7 +17,7 @@ export default (journal, svg, journalList) => {
             const star = journalElementRatingIcons.appendChild(ratingStarsSvg.cloneNode(true)) 
         }
 
-        colorIcon(journalElementRatingIcons, (entry.rating +1), 'journal-entry__icon--light')
+        colorIcon(journalElementRatingIcons, (entry.rating), 'journal-entry__icon--light')
         
         /*Comprehension*/
         const journalElementComprehension = createElement('div', journalElement, ['journal-entry__item', 'journal-entry__comprehension'])
@@ -31,7 +31,7 @@ export default (journal, svg, journalList) => {
             const star = journalElementComprehensionIcons.appendChild(rectangleSvg.cloneNode(true)) 
         }
 
-        colorIcon(journalElementComprehensionIcons, (entry.comprehension +1), 'journal-entry__icon--light')
+        colorIcon(journalElementComprehensionIcons, (entry.comprehension), 'journal-entry__icon--light')
 
         /*Motto*/
         const journalElementMotto = createElement('div', journalElement, ['journal-entry__item', 'journal-entry__motto'])
