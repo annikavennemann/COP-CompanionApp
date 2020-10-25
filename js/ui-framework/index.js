@@ -49,6 +49,14 @@ export function settingAttributes(attributeList, svg) {
     })
 }
 
+export function colorIcon(parentElement, index, colorClass ) {
+    const journalElementChildren = parentElement.children
+    const ratedIcon = journalElementChildren[index]
+    if (ratedIcon) {
+        ratedIcon.classList.add(colorClass)
+    }
+}
+
 /*cssClass.forEach((class) => {
     newElement.classList.add(class)
 })*/

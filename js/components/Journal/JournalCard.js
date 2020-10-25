@@ -1,4 +1,4 @@
-import {createElement, createSvg} from './../../ui-framework'
+import {createElement, createSvg, colorIcon} from './../../ui-framework'
 
 export default (journal, svg, journalList) => {
     journal.forEach((entry) => {
@@ -8,7 +8,6 @@ export default (journal, svg, journalList) => {
         /*Rating*/
         const journalElementRating = createElement('div', journalElement, ['journal-entry__item', 'journal-entry__rating'] )
         const ratingHeadline = createElement('h3', journalElementRating, 'journal-entry__item__title', 'Rating:')
-        const ratingStarsNumber = createElement('p', journalElementRating, '', entry.rating)
 
         /*Star*/
         const ratingStarsSvg = createSvg(Object.values(svg.star), Object.values(svg.star.path), 'path')
@@ -17,10 +16,11 @@ export default (journal, svg, journalList) => {
             const star = journalElementRating.appendChild(ratingStarsSvg.cloneNode(true)) 
         }
 
+        colorIcon(journalElementRating, (entry.rating +1), 'journal-entry__icon--light')
+        
         /*Comprehension*/
         const journalElementComprehension = createElement('div', journalElement, ['journal-entry__item', 'journal-entry__comprehension'])
         const comprehensionHeadline = createElement('h3', journalElementComprehension, 'journal-entry__item__title', 'Comprehension:')
-        const ratingRectangles = createElement('p', journalElementComprehension, '', entry.comprehension)
         
         /*Rectangle*/
         const rectangleSvg = createSvg(Object.values(svg.rectangle), Object.values(svg.rectangle.path), 'rect')
@@ -28,6 +28,8 @@ export default (journal, svg, journalList) => {
         for (let i = 1; i < 11; i++) {
             const star = journalElementComprehension.appendChild(rectangleSvg.cloneNode(true)) 
         }
+
+        colorIcon(journalElementComprehension, (entry.comprehension +1), 'journal-entry__icon--light')
 
         /*Motto*/
         const journalElementMotto = createElement('div', journalElement, ['journal-entry__item', 'journal-entry__motto'])
