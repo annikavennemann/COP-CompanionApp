@@ -1,5 +1,6 @@
 import { createElement } from '../ui-framework';
 import DashboardBuddys from './DashboardBuddys';
+import DashboardTeamBuddys from './DashboardTeamBuddys';
 
 export default () => {
     const main = document.querySelector('main')
@@ -9,9 +10,7 @@ export default () => {
     createElement('h2', divBuddys, 'global__headline2', 'Your Code Buddy for Today:');
     DashboardBuddys();
 
-    const divTeam = createElement('div', dashboardSection)
-    createElement('h2', divTeam, 'global__headline2', 'Your Current Team:') 
-
-    
-    
+    const spanTeam = createElement('span', dashboardSection)
+    createElement('h2', spanTeam, 'global__headline2', 'Your Current Team:') 
+    DashboardTeamBuddys()
 }
