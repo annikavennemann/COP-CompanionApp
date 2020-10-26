@@ -42,6 +42,11 @@
 
 }
 
+.svg-container {
+    display: flex;
+    flex-direction: row;
+}
+
 .journal-entry__rating,
 .journal-entry__comprehension {
     align-items: center;
@@ -64,7 +69,9 @@
     color: #193251;
 }
 
-.journal-entry__icon--light {
+.journal-entry__icon--light,
+.journal-entry__icon--light ~ .journal-entry__star,
+.journal-entry__icon--light ~ .journal-entry__icon {
     color: #E0E4E8;
 }
 
