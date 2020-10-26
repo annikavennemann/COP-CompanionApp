@@ -18,5 +18,8 @@
   "homepage": "https://github.com/annikavennemann/COP-CompanionApp#readme",
   "dependencies": {
     "parcel": "^1.12.4"
+  },
+  "devDependencies": {
+    "prettier": "2.1.2"
   }
 }
