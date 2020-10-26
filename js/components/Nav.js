@@ -58,6 +58,7 @@ export default function Nav(onClick) {
             }
         }
     ]
+    
 
     navInfo.forEach((title) => {
         const linkElement = createElement('li', navList, title.class);
