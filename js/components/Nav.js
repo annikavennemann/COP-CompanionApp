@@ -2,6 +2,8 @@ import { createElement, deleteElement } from '../ui-framework';
 import Journal from './Journal';
 import Buddys from './Buddys'
 import Energy from './Energy';
+import Dashboard from './Dashboard';
+import TeamBuddys from './TeamBuddys';
 
 export default function Nav(onClick) {
     const footer = createElement('footer', document.body, 'side__footer')
@@ -14,6 +16,9 @@ export default function Nav(onClick) {
             subHeadline: null,
             class: 'nav__button--dashboard',
             href: '#dashboard',
+            show: function() {
+                return Dashboard()
+            }
         },
         {
             headline: 'Code Buddys',
@@ -28,7 +33,10 @@ export default function Nav(onClick) {
             headline: 'Teams',
             subHeadline: 'for Exercise 1',
             class: 'nav__button--teams',
-            href: '#teams'
+            href: '#teams',
+            show: function() {
+                return TeamBuddys()
+            }
 
         },
         {

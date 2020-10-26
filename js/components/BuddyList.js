@@ -4,7 +4,7 @@ import BuddyPair from './BuddyPair'
 export default (members) => {
     const main = document.querySelector('main')
     const buddySection = createElement('section', main, 'section-delete')
-    buddySection.id = 'journal'
+    buddySection.id = 'buddy'
     const buddyList = createElement('ul', buddySection, 'buddy__list')
 
     const buddyPairs = [

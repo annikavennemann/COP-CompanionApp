@@ -1,5 +1,4 @@
-import BuddyList from './BuddyList'
-// import { DashboardBuddys } from './Dashboard'
+import TeamList from './TeamList';
 
 export default () => {
 
@@ -45,7 +44,5 @@ export default () => {
             Nachname: 'Jobs'
         }
     ]
-    BuddyList(members);
-
-    // DashboardBuddys(members)
+    TeamList(members);
 }

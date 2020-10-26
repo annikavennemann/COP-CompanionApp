@@ -6,12 +6,13 @@
     position: relative;
     list-style: none;
     padding: 0;
-    margin: 100px 30px 86px;
+    margin: 100px 0 86px;
     text-align: center;
 }
 
 .buddy__pair {
     margin-bottom: 20px;
+    width: 315px;
 }
 
 .buddy {
@@ -22,6 +23,7 @@
     color: #7589A2;
     border: 1px solid #E0E4E8;
     border-radius: 0 0 6px 6px;
+    text-align: center;
 
 }
 .buddy__one {
