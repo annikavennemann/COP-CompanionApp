@@ -2,10 +2,9 @@ import { createElement } from '../ui-framework'
 import Teams from './Teams'
 
 export default (members) => {
-    const main = document.querySelector('main')
-    const teamSection = createElement('section', main, 'section-delete')
-    teamSection.id = 'teams'
-    const buddyList = createElement('ul', teamSection, 'team__list')
+    
+    const span = document.querySelector('span')
+    const buddyList = createElement('ul', span, 'team__list--dashboard')
 
     const buddyTeams = [
         members.slice(0, 4)
