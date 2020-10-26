@@ -8,7 +8,9 @@ export default (members) => {
     const buddyList = createElement('ul', teamSection, 'team__list')
 
     const buddyTeams = [
-        members.slice(0, 4)
+        members.slice(0, 4),
+        members.slice(4, 8),
+        members.slice(8, 10)
     ]
 
     buddyTeams.forEach((team) => {
