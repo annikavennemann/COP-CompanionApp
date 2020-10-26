@@ -1,13 +1,13 @@
-import {createElement} from './../../ui-framework'
+import {createElement, deleteElement} from './../../ui-framework'
 import JournalCard from './JournalCard'
+import JournalForm from './JournalForm'
 
 
-export default (journal, svg) => {
+export default (journal, svg, onClick) => {
     const main = document.querySelector('main')
     const section = createElement('section', main, 'section-delete')
     section.id = 'journal'
     
-
     //Button
     const rateTodayBtn = createElement('button', section, ['nav__button', 'journal-entry__button'], 'Rate today')
 
@@ -16,5 +16,10 @@ export default (journal, svg) => {
 
     //Journal-Card
     JournalCard(journal, svg,  journalList)
+
+    rateTodayBtn.addEventListener('click', function(event) {
+        deleteElement('.section-delete')
+        JournalForm()
+    })
     
 }
