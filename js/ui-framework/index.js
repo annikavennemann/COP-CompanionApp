@@ -31,6 +31,32 @@ export function deleteElement(delClass) {
             })
 }
 
+
+export function createSvg(svgAttributes, pathAttributes, shape) {
+    const newSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg")
+    settingAttributes( svgAttributes, newSvg)
+    const newPath = document.createElementNS("http://www.w3.org/2000/svg", shape)
+    settingAttributes( pathAttributes, newPath)
+    newSvg.appendChild(newPath)
+    return newSvg
+}
+
+export function settingAttributes(attributeList, svg) {
+    const attributes = attributeList
+    attributes.pop()
+    attributes.forEach((attribute) => {
+        svg.setAttribute(attribute[0],attribute[1] )
+    })
+}
+
+export function colorIcon(parentElement, index, colorClass ) {
+    const journalElementChildren = parentElement.children
+    const ratedIcon = journalElementChildren[index]
+    if (ratedIcon) {
+        ratedIcon.classList.add(colorClass)
+    }
+}
+
 /*cssClass.forEach((class) => {
     newElement.classList.add(class)
 })*/

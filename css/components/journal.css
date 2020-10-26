@@ -42,6 +42,11 @@
 
 }
 
+.svg-container {
+    display: flex;
+    flex-direction: row;
+}
+
 .journal-entry__rating,
 .journal-entry__comprehension {
     align-items: center;
@@ -64,15 +69,13 @@
     color: #193251;
 }
 
-.journal-entry__icon--light {
+.journal-entry__icon--light,
+.journal-entry__icon--light ~ .journal-entry__star,
+.journal-entry__icon--light ~ .journal-entry__icon {
     color: #E0E4E8;
 }
 
-/*.journal-entry__rating__icon {
-    margin-left: 1.5em;
-}*/
-
-.journal-entry__motto {
+.journal-entry__motto__text {
     color: #193251;
     font-size: 16px;
     font-weight: 600;
