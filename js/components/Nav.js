@@ -3,6 +3,7 @@ import Journal from './Journal';
 import Buddys from './Buddys'
 import Energy from './Energy';
 import Dashboard from './Dashboard';
+import TeamBuddys from './TeamBuddys';
 
 export default function Nav(onClick) {
     const footer = createElement('footer', document.body, 'side__footer')
